@@ -16,13 +16,13 @@ def setup_parser():
         description="Scholar Benchmark Evaluation Tool",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-  # 단일 모델 평가
+  # single model eval
   python cli.py single --ground-truth data/ground_truth.jsonl --model-result data/model_result.jsonl --output results/
 
-  # 다중 모델 평가
+  # multi model eval
   python cli.py batch --ground-truth data/ground_truth.jsonl --results-dir data/models/ --output results/
 
-  # 전체 보고서 생성
+  # total report
   python cli.py report --ground-truth data/ground_truth.jsonl --results-dir data/models/ --output results/
         """
     )
@@ -219,7 +219,6 @@ def handle_single_evaluation(args):
 
 
 def handle_batch_evaluation(args):
-    """Handle batch model evaluation"""
     print("Starting batch model evaluation...")
     
     if not validate_paths(args):
@@ -326,7 +325,7 @@ def main():
         parser.print_help()
     
     if success:
-        print("\n작업이 성공적으로 완료되었습니다!")
+        print("\n작업이 성공적으로 완료되었습니다.")
     else:
         print("\n작업 중 오류가 발생했습니다.")
         sys.exit(1)
