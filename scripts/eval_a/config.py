@@ -65,14 +65,6 @@ class Config:
         
         return issues
     
-    @classmethod
-    def from_file(cls, config_file: str):
-        if not os.path.exists(config_file):
-            raise FileNotFoundError(f"Config file not found: {config_file}")
-        
-        # JSON 또는 YAML 형태의 설정 파일 로드 (필요시 구현)
-        # 현재는 환경변수를 통한 설정만 지원
-        pass
     
     @classmethod
     def get_all_settings(cls):
