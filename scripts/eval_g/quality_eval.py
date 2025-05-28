@@ -15,13 +15,13 @@ def setup_parser():
         description="Scholar Benchmark Evaluation Tool",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-  # 단일 모델 평가
+  # single model eval
   python cli.py single --ground-truth data/ground_truth.jsonl --model-result data/model_result.jsonl --output results/
 
-  # 다중 모델 평가
+  # multi model eval
   python cli.py batch --ground-truth data/ground_truth.jsonl --results-dir data/models/ --output results/
 
-  # 전체 보고서 생성
+  # total report
   python cli.py report --ground-truth data/ground_truth.jsonl --results-dir data/models/ --output results/
 
     """
@@ -31,7 +31,7 @@ def setup_parser():
         "--language", 
         choices=["ko", "en"], 
         default="en",
-        help="Language for evaluation (default: ko)"
+        help="Language for evaluation (default: en)"
     )
     
     parser.add_argument(
@@ -385,7 +385,6 @@ def handle_validation(args):
     
     ground_truth_file, results_dir, _ = get_effective_paths(args)
     
-    # Validate configuration
     config = Config()
     try:
         if hasattr(config, 'validate_config'):
