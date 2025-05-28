@@ -52,11 +52,11 @@
 
 ## 모델답변 생성 : generate_model_answer
 
-Experiment 1: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks.
-Experiment 2: Includes multiple-choice, multiple-select, short-answer, and true/false tasks with a topic field.
-Experiment 3: Includes multiple-choice, multiple-select, short-answer, and true/false tasks with a paragraph field.
-Experiment 4: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks with a paragraph field and "Think through step by step" instruction.
-Experiment 5: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks with a category field (summarization uses paragraph).
+- Experiment 1: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks.
+- Experiment 2: Includes multiple-choice, multiple-select, short-answer, and true/false tasks with a topic field.
+- Experiment 3: Includes multiple-choice, multiple-select, short-answer, and true/false tasks with a paragraph field.
+- Experiment 4: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks with a paragraph field and "Think through step by step" instruction.
+- Experiment 5: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks with a category field (summarization uses paragraph).
 
 Install dependencies:
 
@@ -72,15 +72,19 @@ The dataset is not included in this repository. You need to download it in JSONL
 
 Configure input and output paths:
 
-Open src/config.py and specify the input_file_path and output_file_path for each experiment. Use relative paths based on the project root. For example:MODEL_CONFIGS = {
-    "gpt-4o_1": {
-        "input_file_path": "../../../dataset/en_eval_dataset.jsonl",
-        "output_file_path": "../../../result/gpt-4o/gpt-4o_result_1_en.json",
-        "model_name": "gpt-4o",
-        "experiment_type": "1"
-    },
-    # Other experiment configurations
-}
+Open src/config.py and specify the input_file_path and output_file_path for each experiment. Use relative paths based on the project root.
+
+For example:
+
+    MODEL_CONFIGS = {
+        "gpt-4o_1": {
+            "input_file_path": "../../../dataset/en_eval_dataset.jsonl",
+            "output_file_path": "../../../result/gpt-4o/gpt-4o_result_1_en.json",
+            "model_name": "gpt-4o",
+            "experiment_type": "1"
+            },
+        # Other experiment configurations
+        }
 
 ## 평가 : eval_scripts
 
