@@ -15,11 +15,11 @@ class DataLoader:
                 try:
                     item = json.loads(line)
                     if 'id' not in item or item['id'] == '' or not str(item['id']).isdigit():
-                        print(f"⚠️ Invalid ID in line {idx+1}: {item}")
+                        print(f"⚠Invalid ID in line {idx+1}: {item}")
                         continue
                     data_dict[int(item['id'])] = item
                 except json.JSONDecodeError as e:
-                    print(f"⚠️ JSON decode error (line {idx+1}): {e}")
+                    print(f"⚠JSON decode error (line {idx+1}): {e}")
         return data_dict
     
     @staticmethod
