@@ -105,7 +105,7 @@ class ScholarBenchmarkEvaluator:
     def evaluate_multiple_models(self, ground_truth_file: str, 
                                 results_dir: str, 
                                 output_dir: str,
-                                save_detailed_results: bool = True) -> Dict[str, Dict]:  # 기본값을 True로 변경
+                                save_detailed_results: bool = True) -> Dict[str, Dict]: 
         
         os.makedirs(output_dir, exist_ok=True)
         
