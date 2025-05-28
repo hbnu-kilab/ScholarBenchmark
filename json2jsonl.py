@@ -24,7 +24,7 @@ def convert_json_to_jsonl_in_model_dirs(base_dir):
                     for item in data:
                         jsonl_file.write(json.dumps(item, ensure_ascii=False) + "\n")
 
-                os.remove(json_file)  # 원본 json 파일 삭제
+                os.remove(json_file)  
                 print(f"Converted and replaced: {json_file} -> {jsonl_path}")
             except Exception as e:
                 print(f"Error processing {json_file}: {e}")
