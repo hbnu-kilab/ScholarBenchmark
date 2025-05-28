@@ -53,24 +53,25 @@
 ## 모델답변 생성 : generate_model_answer
 
 - Experiment 1: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks.
+  
 - Experiment 2: Includes multiple-choice, multiple-select, short-answer, and true/false tasks with a topic field.
+
 - Experiment 3: Includes multiple-choice, multiple-select, short-answer, and true/false tasks with a paragraph field.
+
 - Experiment 4: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks with a paragraph field and "Think through step by step" instruction.
+
 - Experiment 5: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks with a category field (summarization uses paragraph).
 
-Install dependencies:
 
-    pip install -r requirements.txt
-
-Set up environment variables:
+#### Set up environment variables:
 
     Create a .env file in the root directory and add your OpenAI API key:OPENAI_API_KEY=your-api-key
 
-Prepare the dataset:
+#### Prepare the dataset:
 
 The dataset is not included in this repository. You need to download it in JSONL format from the KISTI huggingface and place it in the dataset/ directory.
 
-Configure input and output paths:
+#### Configure input and output paths:
 
 Open src/config.py and specify the input_file_path and output_file_path for each experiment. Use relative paths based on the project root.
 
@@ -85,6 +86,37 @@ For example:
             },
         # Other experiment configurations
         }
+
+
+## Usage
+Run an experiment for a specific model and type from the project root (/home/kilab_ndw/generate_model_answer):
+### Experiment 1
+
+    python3 -m src.exp1.gpt-4o_1   # GPT-4o
+    python3 -m src.exp1.o1-mini_1  # o1-mini
+    python3 -m src.exp1.o3-mini_1  # o3-mini
+
+### Experiment 2
+    python3 -m src.exp2.gpt-4o_2   # GPT-4o
+    python3 -m src.exp2.o1-mini_2  # o1-mini
+    python3 -m src.exp2.o3-mini_2  # o3-mini
+
+### Experiment 3
+    python3 -m src.exp3.gpt-4o_3   # GPT-4o
+    python3 -m src.exp3.o1-mini_3  # o1-mini
+    python3 -m src.exp3.o3-mini_3  # o3-mini
+
+### Experiment 4
+    python3 -m src.exp4.gpt-4o_4   # GPT-4o
+    python3 -m src.exp4.o1-mini_4  # o1-mini
+    python3 -m src.exp4.o3-mini_4  # o3-mini
+
+### Experiment 5
+    python3 -m src.exp5.gpt-4o_5   # GPT-4o
+    python3 -m src.exp5.o1-mini_5  # o1-mini
+    python3 -m src.exp5.o3-mini_5  # o3-mini
+
+The script processes the dataset specified in config.py and saves results to the corresponding result/ folder (e.g., result/gpt-4o/gpt-4o_result_1_en.json).
 
 ## 평가 : eval_scripts
 
