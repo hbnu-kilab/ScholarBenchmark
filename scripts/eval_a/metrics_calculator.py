@@ -1,6 +1,3 @@
-"""
-Metrics calculation for Scholar Benchmark evaluation
-"""
 import ast
 import numpy as np
 from typing import List, Tuple, Dict, Any
