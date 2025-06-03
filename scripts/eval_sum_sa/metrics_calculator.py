@@ -13,7 +13,7 @@ try:
     BLEURT_AVAILABLE = True
 except ImportError:
     BLEURT_AVAILABLE = False
-    print("Warning: BLEURT not available. Install bleurt-pytorch for BLEURT scores.")
+    print("Warning: BLEURT not available.")
 
 try:
     from konlpy.tag import Komoran

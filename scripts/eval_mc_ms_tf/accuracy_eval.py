@@ -325,9 +325,9 @@ def main():
         parser.print_help()
     
     if success:
-        print("\n작업이 성공적으로 완료되었습니다.")
+        print("success")
     else:
-        print("\n작업 중 오류가 발생했습니다.")
+        print("error")
         sys.exit(1)
 
 
