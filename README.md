@@ -73,6 +73,8 @@ This repository contains a model answer generation and evaluation code using the
 
 - Experiment 5: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks with a category field (summarization uses paragraph).
 
+- Memory LLM: Code using the vllm package for inference in Memory LLM, experiments 1-4 can be selected from the shell script (original, topic, paragraph, cot), GPU used: A100 x 4
+
 
 #### Set up environment variables:
 
@@ -126,6 +128,18 @@ Run an experiment for a specific model and type from the project root (/home/kil
     python3 -m src.exp5.gpt-4o_5   # GPT-4o
     python3 -m src.exp5.o1-mini_5  # o1-mini
     python3 -m src.exp5.o3-mini_5  # o3-mini
+
+### Memory LLM
+    python3 main.py --model_nick USE_MODEL_NICK \
+                    --task_list PROBLEM_TYPES \
+                    --exp_type EXPERIMENT_TYPE \
+                    --save_path YOUR_SAVE_PATH \
+                    --data_path YOUR_DATA_PATH
+
+In addition, you can change the parameters and execute the script in the ~predict_vllm.sh~ script, and the command is as follows.
+
+    sh ./predict_vllm.sh
+
 
 The script processes the dataset specified in config.py and saves results to the corresponding result/ folder (e.g., result/gpt-4o/gpt-4o_result_1_en.json).
 
