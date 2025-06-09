@@ -136,7 +136,7 @@ Run an experiment for a specific model and type from the project root (/home/kil
                     --save_path YOUR_SAVE_PATH \
                     --data_path YOUR_DATA_PATH
 
-In addition, you can change the parameters and execute the script in the ~predict_vllm.sh~ script, and the command is as follows.
+In addition, you can change the parameters and execute the script in the `predict_vllm.sh` script, and the command is as follows.
 
     sh ./predict_vllm.sh
 
