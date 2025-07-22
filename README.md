@@ -157,7 +157,7 @@ The script processes the dataset specified in config.py and saves results to the
 the model answers are ready, specify the directory where you want to store the correct answer file and the results of the directory with the original answers and run it as follows
 
     # Summarization, Short_answer, Multiple_choice, Multiple_select, True_false
-    python scripts/eval_all/evaluate.py \
+    python scripts/eval_all/evaluate_all.py \
         --language [ko or en] \
         batch \
         --ground-truth [ground-truth-path] \
