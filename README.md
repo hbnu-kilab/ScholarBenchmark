@@ -145,7 +145,7 @@ The script processes the dataset specified in config.py and saves results to the
 
 ## Evaluation : Eval_scripts
 
-| 문제유형   |  Evaluation Metrics      |
+| Problem type   |  Evaluation Metrics      |
 |-------------------|-----------------------------|
 | Summarization   | rouge-1, rouge-2, rouge-l, bert_score  |
 | Short_answer   | exact_match, f1, bert_score, bluert_score, rouge-1, bleu-1    |
