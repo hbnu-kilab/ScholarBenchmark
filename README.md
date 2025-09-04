@@ -1,6 +1,9 @@
 <!--# ScholarBench: A Bilingual Benchmark for Abstraction, Comprehension, and Reasoning Evaluation in Academic Contexts
 This repository contains a model answer generation and evaluation code using the ScholarBench.-->
 
+## Dataset URL
+https://huggingface.co/datasets/KISTI-KONI/ScholarBench
+
 ## Overview and Installation
 
 ### setup
