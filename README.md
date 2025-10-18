@@ -1,12 +1,16 @@
-<!--# ScholarBench: A Bilingual Benchmark for Abstraction, Comprehension, and Reasoning Evaluation in Academic Contexts
-This repository contains a model answer generation and evaluation code using the ScholarBench.-->
+# ScholarBench: A Bilingual Benchmark for Abstraction, Comprehension, and Reasoning Evaluation in Academic Contexts
+[![arXiv](https://img.shields.io/badge/arXiv-2505.16566-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2505.16566)
+[![Hugging Face Dataset](https://img.shields.io/badge/HF_Dataset-ScholarBench-orange?logo=HuggingFace&style=flat-square)](https://huggingface.co/datasets/KISTI-KONI/ScholarBench)
+
+
+<!--This repository contains a model answer generation and evaluation code using the ScholarBench.-->
 
 ## Dataset URL
 https://huggingface.co/datasets/KISTI-KONI/ScholarBench
 
 ## Overview and Installation
 
-### setup
+### Setup
 
     conda create -n sb_env python=3.12.9
     conda activate sb_env
@@ -64,7 +68,7 @@ https://huggingface.co/datasets/KISTI-KONI/ScholarBench
 
 
 
-## Generate model answer : generate_model_answer
+## Generate model answer: generate_model_answer
 
 - Experiment 1: Includes multiple-choice, multiple-select, short-answer, true/false, and summarization tasks.
   
@@ -79,16 +83,13 @@ https://huggingface.co/datasets/KISTI-KONI/ScholarBench
 - Memory LLM: Code using the vllm package for inference in Memory LLM, experiments 1-4 can be selected from the shell script (original, topic, paragraph, cot), GPU used: A100 x 4
 
 
-#### Set up environment variables:
-
+#### Setup environment variables
     Create a .env file in the root directory and add your OpenAI API key:OPENAI_API_KEY=your-api-key
 
-#### Prepare the dataset:
-
+#### Prepare the dataset
 The dataset is not included in this repository. You need to download it in JSONL format from the KISTI huggingface and place it in the dataset/ directory.
 
-#### Configure input and output paths:
-
+#### Configure input and output paths
 Open src/config.py and specify the input_file_path and output_file_path for each experiment. Use relative paths based on the project root.
 
 For example:
@@ -105,9 +106,9 @@ For example:
 
 
 ## Usage
-Run an experiment for a specific model and type from the project root (/home/kilab_ndw/generate_model_answer):
-### Experiment 1
+Run an experiment for a specific model and type from the project root (`/home/kilab_ndw/generate_model_answer`):
 
+### Experiment 1
     python3 -m src.exp1.gpt-4o_1   # GPT-4o
     python3 -m src.exp1.o1-mini_1  # o1-mini
     python3 -m src.exp1.o3-mini_1  # o3-mini
@@ -157,7 +158,7 @@ The script processes the dataset specified in config.py and saves results to the
 | True_false      | accuracy  |
 
 ### Run evaluation
-the model answers are ready, specify the directory where you want to store the correct answer file and the results of the directory with the original answers and run it as follows
+The model answers are ready, specify the directory where you want to store the correct answer file and the results of the directory with the original answers and run it as follows
 
     # Summarization, Short_answer, Multiple_choice, Multiple_select, True_false
     python scripts/eval_all/evaluate_all.py \
@@ -182,3 +183,15 @@ the model answers are ready, specify the directory where you want to store the c
         --ground-truth [ground-truth-path] \
         --results-dir [model-answer-path] \
         --output [output-path]
+
+
+## Citation
+If you find our work (dataset, code, paper, etc.) useful, please consider citing our paper:
+```
+@article{noh2025scholarbench,
+  title={ScholarBench: A Bilingual Benchmark for Abstraction, Comprehension, and Reasoning Evaluation in Academic Contexts},
+  author={Noh, Dongwon and Koh, Donghyeok and Yuk, Junghun and Kim, Gyuwan and Lee, Jaeyong and Lim, Kyungtae and Park, Cheoneum},
+  journal={arXiv preprint arXiv:2505.16566},
+  year={2025}
+}
+```
