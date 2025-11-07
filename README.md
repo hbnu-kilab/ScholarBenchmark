@@ -1,4 +1,6 @@
 # ScholarBench: A Bilingual Benchmark for Abstraction, Comprehension, and Reasoning Evaluation in Academic Contexts
+
+[![EMNLP](https://img.shields.io/badge/EMNLP-2025-E60012?logoColor=white)](https://aclanthology.org/2025.findings-emnlp.465/)
 [![arXiv](https://img.shields.io/badge/arXiv-2505.16566-B31B1B?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2505.16566)
 [![Hugging Face Dataset](https://img.shields.io/badge/HF_Dataset-ScholarBench-orange?logo=HuggingFace&style=flat-square)](https://huggingface.co/datasets/KISTI-KONI/ScholarBench)
 
